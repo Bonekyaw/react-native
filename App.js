@@ -15,15 +15,38 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+class Item extends Component {
+  render(){
+    return (
+      <View style={{flex:1, flexDirection: 'row'}}>
+        <View >
+          <Text style={styles.badge}>A</Text>
+        </View>
+        <View>
+          <Text style={{marginTop: 10, fontWeight: 'bold'}}>David Chan</Text>
+          <Text style={{color: '#777'}}>lorem Ipsum Hum Lorem Guin</Text>
+        </View>
+      </View>
+
+      )
+  }
+}
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native! Bone</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
       </View>
     );
   }
@@ -32,18 +55,15 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
+  badge: {
+    width: 48, 
+    height: 48,
+    borderRadius: 49,
+    fontSize: 30,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    backgroundColor: '#777',
   },
 });
