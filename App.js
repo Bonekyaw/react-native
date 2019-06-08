@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,11 +20,11 @@ class Item extends Component {
     return (
       <View style={{flex:1, flexDirection: 'row'}}>
         <View >
-          <Text style={styles.badge}>A</Text>
+          <Text style={styles.badge}>{this.props.name[0]}</Text>
         </View>
         <View>
-          <Text style={{marginTop: 10, fontWeight: 'bold'}}>David Chan</Text>
-          <Text style={{color: '#777'}}>lorem Ipsum Hum Lorem Guin</Text>
+          <Text style={{marginTop: 10, fontWeight: 'bold'}}>{this.props.name}</Text>
+          <Text style={{color: '#777'}}>lorem Ipsum Hum Lorem Guin {this.props.name}</Text>
         </View>
       </View>
 
@@ -37,16 +37,11 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        <Image source={require('./image/12.png')} />
+        <Item name="Jackie Chan"/>
+        <Item name="Amir Khan"/>
+        <Item name="Shar Khan"/>
+        <Item name="Bat man"/>
       </View>
     );
   }
